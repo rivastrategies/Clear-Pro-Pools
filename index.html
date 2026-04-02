@@ -121,6 +121,14 @@
       padding: 14px 0;
     }
 
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: end;
+    }
+
     .brand {
       display: flex;
       align-items: center;
@@ -173,6 +181,27 @@
       transform: translateY(-2px);
       box-shadow: 0 18px 30px rgba(239, 177, 63, 0.34);
       filter: saturate(1.05);
+    }
+
+    .social-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 18px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #2d4f93 0%, #1f3f82 100%);
+      color: #ffffff;
+      font-weight: 800;
+      white-space: nowrap;
+      box-shadow: 0 12px 24px rgba(17, 40, 79, 0.2);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
+    }
+
+    .social-chip:hover,
+    .social-chip:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 30px rgba(17, 40, 79, 0.28);
+      filter: saturate(1.06);
     }
 
     .hero {
@@ -690,6 +719,11 @@
         align-items: stretch;
       }
 
+      .topbar-actions {
+        width: 100%;
+        justify-content: stretch;
+      }
+
       .brand {
         justify-content: center;
       }
@@ -703,6 +737,10 @@
       }
 
       .phone-chip {
+        width: 100%;
+      }
+
+      .social-chip {
         width: 100%;
       }
 
@@ -751,7 +789,10 @@
           <span>Pool cleaning service for Santa Fe, League City, Dickinson, Alvin, and Friendswood</span>
         </span>
       </a>
-      <a class="phone-chip" href="tel:2818245239">Call or Text (281) 824-5239</a>
+      <div class="topbar-actions">
+        <a class="phone-chip" href="tel:2818245239">Call or Text (281) 824-5239</a>
+        <a class="social-chip" href="https://www.facebook.com/people/Clear-Pro-Pools-LLC/61577429867396/?mibextid=wwXIfr&amp;rdid=HbuE8tIOWXSVNQiq&amp;share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18KHq5VKU8%2F%3Fmibextid%3DwwXIfr" target="_blank" rel="noopener noreferrer">Facebook</a>
+      </div>
     </div>
   </header>
 
@@ -788,7 +829,6 @@
         <div class="section-head">
           <div>
             <h2>Services</h2>
-            <p>Pool services for Santa Fe, League City, Dickinson, Alvin, and Friendswood, focused on the work homeowners search for when they need help now.</p>
           </div>
         </div>
         <div class="services-grid">
@@ -850,7 +890,6 @@
         <div class="section-head">
           <div>
             <h2>Google Reviews</h2>
-            <p>Strong local proof for pool cleaning service and pool repair work, with reviews that highlight honesty, knowledge, speed, and results.</p>
           </div>
         </div>
         <div class="reviews-grid">
@@ -895,7 +934,6 @@
             <div class="section-head">
               <div>
                 <h2>Service Area</h2>
-                <p>Matching the local coverage you specified so the page stays aligned with Google business details and search intent in each city served.</p>
               </div>
             </div>
             <div class="service-tags" aria-label="Cities served">
