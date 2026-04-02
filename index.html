@@ -22,7 +22,6 @@
       --max: 1120px;
     }
 
-    
     * {
       box-sizing: border-box;
     }
@@ -79,36 +78,11 @@
       min-width: 0;
     }
 
-    .brand-mark {
-      position: relative;
-      width: 48px;
-      height: 48px;
-      flex: 0 0 48px;
-      border-radius: 14px;
-      background: linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
-      overflow: hidden;
-    }
-
-    .brand-mark::before {
-      content: "";
-      position: absolute;
-      left: 8px;
-      right: 8px;
-      bottom: 14px;
-      height: 2px;
-      background: rgba(255, 255, 255, 0.92);
-    }
-
-    .brand-mark::after {
-      content: "";
-      position: absolute;
-      left: 13px;
-      bottom: 14px;
-      width: 22px;
-      height: 11px;
-      border-radius: 22px 22px 0 0;
-      background: linear-gradient(180deg, #f4c459 0%, var(--gold) 100%);
+    .brand-logo {
+      width: clamp(160px, 23vw, 230px);
+      height: auto;
+      flex: 0 0 auto;
+      object-fit: contain;
     }
 
     .brand-copy {
@@ -545,6 +519,14 @@
         align-items: stretch;
       }
 
+      .brand {
+        justify-content: center;
+      }
+
+      .brand-logo {
+        width: min(100%, 240px);
+      }
+
       .brand-copy strong {
         white-space: normal;
       }
@@ -581,7 +563,7 @@
   <header class="topbar">
     <div class="shell topbar-inner">
       <a class="brand" href="#top" aria-label="Clear Pro Pools LLC home">
-        <span class="brand-mark" aria-hidden="true"></span>
+        <img class="brand-logo" src="images/clearprologo.png" alt="Clear Pro Pools LLC logo">
         <span class="brand-copy">
           <strong>Clear Pro Pools LLC</strong>
           <span>Santa Fe / League City pool cleaning service</span>
