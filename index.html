@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clear Pro Pools LLC | Pool Cleaning & Repair - Santa Fe / League City</title>
+  <meta name="description" content="Clear Pro Pools LLC provides Pool Cleaning & Repair in Santa Fe, League City, Dickinson, Alvin, and Friendswood. Call or text (281) 824-5239.">
+  <meta name="format-detection" content="telephone=yes">
+  <style>
+    :root {
+      --navy: #19386f;
+      --navy-deep: #11284f;
+      --gold: #efb13f;
+      --gold-soft: #f8d27f;
+      --ink: #18212f;
+      --muted: #5a6473;
+      --line: #d8e0ec;
+      --paper: #ffffff;
+      --wash: #f3f6fb;
+      --shadow: 0 18px 40px rgba(17, 40, 79, 0.12);
+      --radius: 22px;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top right, rgba(239, 177, 63, 0.22), transparent 22%),
+        linear-gradient(180deg, #ffffff 0%, #f6f9fd 100%);
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .shell {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid rgba(25, 56, 111, 0.08);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      position: relative;
+      width: 48px;
+      height: 48px;
+      flex: 0 0 48px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+      overflow: hidden;
+    }
+
+    .brand-mark::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      right: 8px;
+      bottom: 14px;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.92);
+    }
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      left: 13px;
+      bottom: 14px;
+      width: 22px;
+      height: 11px;
+      border-radius: 22px 22px 0 0;
+      background: linear-gradient(180deg, #f4c459 0%, var(--gold) 100%);
+    }
+
+    .brand-copy {
+      min-width: 0;
+    }
+
+    .brand-copy strong {
+      display: block;
+      font-size: 0.98rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--navy);
+      white-space: nowrap;
+    }
+
+    .brand-copy span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .phone-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 18px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--gold) 0%, #df9f24 100%);
+      color: var(--navy-deep);
+      font-weight: 800;
+      box-shadow: 0 12px 24px rgba(239, 177, 63, 0.28);
+      white-space: nowrap;
+    }
+
+    .hero {
+      padding: 34px 0 22px;
+    }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 32px;
+      background:
+        linear-gradient(135deg, rgba(25, 56, 111, 0.98) 0%, rgba(17, 40, 79, 0.96) 65%),
+        var(--navy);
+      color: #fff;
+      padding: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      top: -120px;
+      right: -80px;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(239, 177, 63, 0.28) 0%, transparent 70%);
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 28px;
+      grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.95fr);
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--gold-soft);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 18px 0 14px;
+      font-size: clamp(2.1rem, 6vw, 4.4rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      max-width: 12ch;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 58ch;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 1.02rem;
+      line-height: 1.6;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 20px;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-1px);
+    }
+
+    .button-primary {
+      background: linear-gradient(180deg, var(--gold) 0%, #de9e23 100%);
+      color: var(--navy-deep);
+      box-shadow: 0 16px 28px rgba(239, 177, 63, 0.26);
+    }
+
+    .button-secondary {
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #fff;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .hero-panel {
+      position: relative;
+      border-radius: 26px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 24px;
+    }
+
+    .hero-panel h2 {
+      margin: 0 0 16px;
+      font-size: 1.15rem;
+      color: #fff;
+    }
+
+    .hero-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .hero-list li {
+      display: grid;
+      grid-template-columns: 16px 1fr;
+      gap: 10px;
+      color: rgba(255, 255, 255, 0.88);
+      line-height: 1.5;
+    }
+
+    .hero-list li::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      margin-top: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 5px rgba(239, 177, 63, 0.12);
+    }
+
+    main section {
+      padding: 22px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      letter-spacing: -0.03em;
+      color: var(--navy-deep);
+    }
+
+    .section-head p {
+      margin: 0;
+      max-width: 58ch;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .services-grid,
+    .reviews-grid,
+    .proof-grid,
+    .area-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .services-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card {
+      border-radius: var(--radius);
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: 0 14px 30px rgba(17, 40, 79, 0.06);
+    }
+
+    .service-card {
+      padding: 22px;
+    }
+
+    .service-card strong {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(25, 56, 111, 0.12), rgba(25, 56, 111, 0.04));
+      color: var(--navy);
+      margin-bottom: 14px;
+      font-size: 1.05rem;
+    }
+
+    .service-card h3 {
+      margin: 0;
+      font-size: 1.25rem;
+      color: var(--navy-deep);
+    }
+
+    .service-card p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .proof-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .proof-card {
+      overflow: hidden;
+    }
+
+    .proof-visual {
+      aspect-ratio: 4 / 3;
+      background:
+        linear-gradient(135deg, rgba(25, 56, 111, 0.08), rgba(25, 56, 111, 0.02)),
+        repeating-linear-gradient(135deg, rgba(239, 177, 63, 0.14) 0 14px, rgba(255, 255, 255, 0.95) 14px 28px);
+      display: grid;
+      place-items: center;
+      color: var(--navy);
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .proof-copy {
+      padding: 18px;
+    }
+
+    .proof-copy h3 {
+      margin: 0;
+      font-size: 1.04rem;
+      color: var(--navy-deep);
+    }
+
+    .proof-copy p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .reviews-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .review-card {
+      padding: 22px;
+    }
+
+    .review-card .stars {
+      color: var(--gold);
+      font-size: 0.95rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .review-card p {
+      margin: 14px 0 0;
+      color: var(--ink);
+      line-height: 1.7;
+    }
+
+    .review-card strong {
+      display: block;
+      margin-top: 16px;
+      color: var(--navy-deep);
+      font-size: 0.98rem;
+    }
+
+    .area-grid {
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+      align-items: stretch;
+    }
+
+    .area-card,
+    .contact-card,
+    .cta-band {
+      padding: 24px;
+    }
+
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      padding: 0 16px;
+      border-radius: 999px;
+      background: var(--wash);
+      border: 1px solid var(--line);
+      color: var(--navy-deep);
+      font-weight: 700;
+    }
+
+    .contact-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-list li {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .contact-list strong {
+      color: var(--navy-deep);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .cta-band {
+      margin-top: 8px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, #fff7e5 0%, #ffffff 100%);
+      border: 1px solid rgba(239, 177, 63, 0.48);
+      box-shadow: 0 16px 30px rgba(239, 177, 63, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .cta-band h2 {
+      margin: 0;
+      font-size: clamp(1.45rem, 3vw, 2.15rem);
+      color: var(--navy-deep);
+      letter-spacing: -0.03em;
+    }
+
+    .cta-band p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    footer {
+      padding: 24px 0 40px;
+    }
+
+    .footer-card {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 20px;
+      border-radius: 22px;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .footer-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 960px) {
+      .hero-grid,
+      .area-grid,
+      .services-grid,
+      .proof-grid,
+      .reviews-grid,
+      .cta-band {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head,
+      .cta-band,
+      .footer-card {
+        align-items: start;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .topbar {
+        position: static;
+      }
+
+      .topbar-inner {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .brand-copy strong {
+        white-space: normal;
+      }
+
+      .phone-chip {
+        width: 100%;
+      }
+
+      .hero-card,
+      .area-card,
+      .contact-card,
+      .cta-band,
+      .review-card,
+      .service-card,
+      .proof-copy {
+        padding: 20px;
+      }
+
+      h1 {
+        max-width: none;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="#top" aria-label="Clear Pro Pools LLC home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-copy">
+          <strong>Clear Pro Pools LLC</strong>
+          <span>Santa Fe / League City pool cleaning service</span>
+        </span>
+      </a>
+      <a class="phone-chip" href="tel:2818245239">Call or Text (281) 824-5239</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="shell">
+        <div class="hero-card">
+          <div class="hero-grid">
+            <div>
+              <span class="eyebrow">5.0 Google rating</span>
+              <h1>Pool Cleaning &amp; Repair - Santa Fe / League City</h1>
+              <p>Clear Pro Pools LLC helps homeowners in the Santa Fe and League City area keep pools clean, clear, and running right. Fast local service. Straight answers. Click to call or text now.</p>
+              <div class="hero-actions">
+                <a class="button button-primary" href="tel:2818245239">Call or Text (281) 824-5239</a>
+                <a class="button button-secondary" href="#reviews">See Google Reviews</a>
+              </div>
+            </div>
+            <aside class="hero-panel" aria-label="Quick business details">
+              <h2>Local business details</h2>
+              <ul class="hero-list">
+                <li>Clear Pro Pools LLC</li>
+                <li>12002 Hwy 6, Santa Fe, TX 77510</li>
+                <li>Serving Santa Fe, League City, Dickinson, Alvin, and Friendswood</li>
+                <li>Pool Cleaning &amp; Repair with weekly service, green to clean, and equipment repair</li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>Services</h2>
+            <p>Focused on the work people search for when they need help now.</p>
+          </div>
+        </div>
+        <div class="services-grid">
+          <article class="card service-card">
+            <strong>01</strong>
+            <h3>Weekly Pool Service</h3>
+            <p>Routine pool cleaning service to keep your water clear and your system running the way it should.</p>
+          </article>
+          <article class="card service-card">
+            <strong>02</strong>
+            <h3>Green to Clean</h3>
+            <p>Pool cleanup for water that has turned green and needs a direct reset back to usable condition.</p>
+          </article>
+          <article class="card service-card">
+            <strong>03</strong>
+            <h3>Equipment Repair</h3>
+            <p>Diagnosis and repair support for pool equipment issues so you can get the system back online quickly.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="proof">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>Proof</h2>
+            <p>Before and after slots are ready for your photos. The reviews below are pulled from the Google feedback you provided.</p>
+          </div>
+        </div>
+        <div class="proof-grid">
+          <article class="card proof-card">
+            <div class="proof-visual">Before / After</div>
+            <div class="proof-copy">
+              <h3>Green to Clean turnaround</h3>
+              <p>Replace this panel with a real cleanup photo set to show visible pool recovery.</p>
+            </div>
+          </article>
+          <article class="card proof-card">
+            <div class="proof-visual">Before / After</div>
+            <div class="proof-copy">
+              <h3>Weekly service consistency</h3>
+              <p>Use this slot for a routine maintenance example that highlights water clarity and clean surfaces.</p>
+            </div>
+          </article>
+          <article class="card proof-card">
+            <div class="proof-visual">Before / After</div>
+            <div class="proof-copy">
+              <h3>Equipment repair result</h3>
+              <p>Swap in equipment or pad photos that show repaired components and restored operation.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>Google Reviews</h2>
+            <p>Strong proof from local homeowners who mention honesty, knowledge, speed, and results.</p>
+          </div>
+        </div>
+        <div class="reviews-grid">
+          <article class="card review-card">
+            <div class="stars">Five-Star Review</div>
+            <p>"Jonathan is the pool whisperer. He can quickly and accurately diagnose pool issues, and his business practices are honest and fair. I highly recommend Clear Pro Pools!"</p>
+            <strong>Sarah Poteet</strong>
+          </article>
+          <article class="card review-card">
+            <div class="stars">Five-Star Review</div>
+            <p>"Jonathan has a wealth of information in regard to getting my pool back to tip top operating shape. He is thorough, honest, and fair."</p>
+            <strong>Armon Heydari-Dehkordi</strong>
+          </article>
+          <article class="card review-card">
+            <div class="stars">Five-Star Review</div>
+            <p>"Jonathan at Clear Pro Pools is very knowledgeable on pool water chemistry, and pool equipment maintenance and repairs. He is reliable and honest and does not try to upsell you on things you do not need."</p>
+            <strong>Harold Silberisen III</strong>
+          </article>
+          <article class="card review-card">
+            <div class="stars">Five-Star Review</div>
+            <p>"Professional, knowledgeable, and they truly go above and beyond, not just maintaining your pool, but keeping it running at peak performance."</p>
+            <strong>Djona Hoffart</strong>
+          </article>
+          <article class="card review-card">
+            <div class="stars">Five-Star Review</div>
+            <p>"My pool genuinely looks better than it has in ages. I highly recommend Jonathan Waggoner to anyone in need of reliable and exceptionally thorough pool cleaning services."</p>
+            <strong>Farrah Portie</strong>
+          </article>
+          <article class="card review-card">
+            <div class="stars">Five-Star Review</div>
+            <p>"He is very professional, fast, and affordable. You will not find a better service or company."</p>
+            <strong>Abbie Hart</strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="service-area">
+      <div class="shell">
+        <div class="area-grid">
+          <article class="card area-card">
+            <div class="section-head">
+              <div>
+                <h2>Service Area</h2>
+                <p>Matching the local coverage you specified so the page stays aligned with Google business details.</p>
+              </div>
+            </div>
+            <div class="service-tags" aria-label="Cities served">
+              <span class="tag">Santa Fe</span>
+              <span class="tag">League City</span>
+              <span class="tag">Dickinson</span>
+              <span class="tag">Alvin</span>
+              <span class="tag">Friendswood</span>
+            </div>
+          </article>
+          <aside class="card contact-card">
+            <div class="section-head">
+              <div>
+                <h2>Contact</h2>
+              </div>
+            </div>
+            <ul class="contact-list">
+              <li>
+                <strong>Business</strong>
+                Clear Pro Pools LLC
+              </li>
+              <li>
+                <strong>Phone</strong>
+                <a href="tel:2818245239">(281) 824-5239</a>
+              </li>
+              <li>
+                <strong>Address</strong>
+                12002 Hwy 6, Santa Fe, TX 77510
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="cta-band card">
+          <div>
+            <h2>Need pool service now?</h2>
+            <p>Call or text Clear Pro Pools LLC for Pool Cleaning &amp; Repair in the Santa Fe / League City area.</p>
+          </div>
+          <a class="button button-primary" href="tel:2818245239">Call or Text (281) 824-5239</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">
+      <div class="footer-card">
+        <p>Clear Pro Pools LLC | Pool Cleaning &amp; Repair | Santa Fe, League City, Dickinson, Alvin, Friendswood</p>
+        <a class="phone-chip" href="tel:2818245239">(281) 824-5239</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
