@@ -1152,7 +1152,7 @@
               <div class="hero-actions">
                 <a class="button button-primary" href="tel:2818245239">Call or Text (281) 824-5239</a>
                 <a class="button button-secondary" href="#reviews">See Google Reviews</a>
-                <a class="button button-secondary" href="#request-service">Request Service</a>
+                <a class="button button-secondary" href="/request-service.html">Request Service</a>
               </div>
             </div>
             <aside class="hero-panel" aria-label="Quick business details">
@@ -1318,48 +1318,11 @@
           <div class="section-head">
             <div>
               <h2 id="request-heading">Request Pool Service</h2>
-              <p>Tell us what your pool needs. Clear Pro Pools will follow up to discuss service and availability.</p>
+              <p>Tell us what your pool needs. We’ll prepare an email for you to review and send directly to Clear Pro Pools.</p>
             </div>
           </div>
-          <form id="cpp-service-form" action="https://formspree.io/f/xkjjzawn" method="POST" aria-describedby="request-privacy">
-            <div class="request-grid">
-              <label class="request-field" for="lead-name">Name
-                <input id="lead-name" name="name" autocomplete="name" maxlength="100" required>
-              </label>
-              <label class="request-field" for="lead-phone">Phone
-                <input id="lead-phone" name="phone" type="tel" autocomplete="tel" minlength="10" maxlength="30" required>
-              </label>
-              <label class="request-field" for="lead-email">Email (Optional)
-                <input id="lead-email" name="email" type="email" autocomplete="email" maxlength="254">
-              </label>
-              <label class="request-field" for="lead-zip">Service ZIP Code
-                <input id="lead-zip" name="service_zip" autocomplete="postal-code" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" title="Enter a five-digit ZIP code" required>
-              </label>
-              <label class="request-field request-wide" for="lead-service">Service Needed
-                <select id="lead-service" name="service" required>
-                  <option value="">Choose a Service</option>
-                  <option>Weekly Pool Service</option>
-                  <option>Green to Clean</option>
-                  <option>Equipment Repair</option>
-                  <option>Other Pool Service</option>
-                </select>
-              </label>
-              <label class="request-field request-wide" for="lead-message">How Can We Help? (Optional)
-                <textarea id="lead-message" name="message" maxlength="3000"></textarea>
-              </label>
-            </div>
-            <div class="form-trap" aria-hidden="true">
-              <label for="lead-website">Leave This Field Empty</label>
-              <input id="lead-website" name="_gotcha" tabindex="-1" autocomplete="off">
-            </div>
-            <input type="hidden" name="_subject" value="Clear Pro Pools — Service Request">
-            <input type="hidden" name="lead_source" value="clearpropools.com service request">
-            <div id="lead-attribution"></div>
-            <p class="request-note" id="request-privacy">Your details are sent securely through Formspree to Clear Pro Pools and its website partner, Riva, to respond to this request. Please do not include payment details or other sensitive information.</p>
-            <button class="button button-primary" type="submit">Send Service Request</button>
-            <p class="request-status" id="request-status" role="status" aria-live="polite" tabindex="-1"></p>
-            <noscript><p class="request-note">After submitting, Formspree will display a confirmation page.</p></noscript>
-          </form>
+          <a class="button button-primary" href="/request-service.html">Request Service</a>
+          <p class="request-note">Your request is sent when you press Send in your email app. Prefer to email directly? <a href="mailto:clearpropoolsllc@gmail.com" style="color:var(--navy);text-decoration:underline;overflow-wrap:anywhere">clearpropoolsllc@gmail.com</a></p>
         </div>
       </div>
     </section>
@@ -1419,94 +1382,5 @@
       </div>
     </div>
   </footer>
-  <script id="cpp-lead-capture">
-    (() => {
-      'use strict';
-      const form = document.getElementById('cpp-service-form');
-      const button = form.querySelector('button[type="submit"]');
-      const status = document.getElementById('request-status');
-      const attribution = document.getElementById('lead-attribution');
-      const url = new URL(window.location.href);
-      const isTest = url.searchParams.get('cpp_test') === '1';
-      const keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'utm_id', 'gclid', 'gbraid', 'wbraid', 'msclkid', 'fbclid'];
-      const now = Date.now();
-      let referringSite = '';
-      try { referringSite = new URL(document.referrer).origin; } catch (_) {}
-      const current = {
-        landing_page: url.origin + url.pathname,
-        referring_site: referringSite,
-        first_visit_utc: new Date(now).toISOString(),
-        captured_at: now
-      };
-      keys.forEach(key => { current[key] = (url.searchParams.get(key) || '').slice(0, 250); });
-      let touch = current;
-      // Retain campaign attribution for this tab for up to 30 minutes. Never store contact fields.
-      try {
-        const saved = JSON.parse(sessionStorage.getItem('cpp_lead_attribution_v1') || 'null');
-        const hasCampaign = keys.some(key => current[key]);
-        if (!hasCampaign && saved && now - saved.captured_at < 30 * 60 * 1000) touch = saved;
-        sessionStorage.setItem('cpp_lead_attribution_v1', JSON.stringify(touch));
-      } catch (_) {}
-      const submissionId = window.crypto && window.crypto.randomUUID
-        ? window.crypto.randomUUID() : 'cpp-' + now + '-' + Math.random().toString(36).slice(2);
-      const fields = {
-        attribution_scope: 'Current tab; most recent campaign visit within 30 minutes',
-        landing_page: touch.landing_page,
-        referring_site: touch.referring_site || '(none)',
-        first_visit_utc: touch.first_visit_utc,
-        submission_page: url.origin + url.pathname,
-        submission_id: submissionId,
-        submission_type: isTest ? 'TEST — Do not contact; exclude from lead totals' : 'Customer service request'
-      };
-      keys.forEach(key => { fields[key] = touch[key] || '(not supplied)'; });
-      Object.entries(fields).forEach(([name, value]) => {
-        const input = document.createElement('input');
-        input.type = 'hidden'; input.name = name; input.value = value;
-        attribution.appendChild(input);
-      });
-      if (isTest) form.elements._subject.value = '[TEST] Clear Pro Pools — Delivery and Attribution Check';
-      let pending = false;
-      let completed = false;
-      form.addEventListener('submit', async event => {
-        event.preventDefault();
-        if (pending || completed || !form.reportValidity()) return;
-        pending = true;
-        button.disabled = true;
-        button.textContent = 'Sending…';
-        status.textContent = '';
-        const payload = new FormData(form);
-        if (!payload.get('email')) payload.delete('email');
-        payload.set('submitted_at_utc', new Date().toISOString());
-        try {
-          const response = await fetch(form.action, {
-            method: 'POST', body: payload, headers: { Accept: 'application/json' }
-          });
-          const result = await response.json();
-          if (!response.ok || !result.ok) throw new Error('Submission not confirmed');
-          completed = true;
-          form.reset();
-          button.textContent = 'Request Sent';
-          status.dataset.state = 'success';
-          status.textContent = 'Thank you! Your service request has been received. Clear Pro Pools will follow up with you.';
-          // Use the existing Google tag; do not send contact details or initialize another page-view tag.
-          window.dataLayer = window.dataLayer || [];
-          function leadEvent() { window.dataLayer.push(arguments); }
-          leadEvent('event', isTest ? 'cpp_form_test' : 'generate_lead', {
-            send_to: 'G-MZHY57J14G', form_id: 'cpp-service-form',
-            form_name: 'CPP Service Request', lead_method: 'formspree',
-            ...(isTest ? { debug_mode: true } : {})
-          });
-        } catch (_) {
-          button.disabled = false;
-          button.textContent = 'Send Service Request';
-          status.dataset.state = 'error';
-          status.textContent = 'We could not confirm your request. Your entries are still here. Please call (281) 824-5239 for help, or try again.';
-        } finally {
-          pending = false;
-          status.focus();
-        }
-      });
-    })();
-  </script>
 </body>
 </html>
