@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data: https://*.google-analytics.com https://www.googletagmanager.com; style-src 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; connect-src https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://www.google.com/g/collect https://www.googletagmanager.com; form-action 'none'; base-uri 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data: https://*.google-analytics.com https://www.googletagmanager.com https://*.callrail.com https://*.calltrk.com; style-src 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://cdn.callrail.com https://js.callrail.com; connect-src https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://www.google.com/g/collect https://www.googletagmanager.com https://*.callrail.com https://*.calltrk.com; form-action 'none'; base-uri 'none'">
   <script src="/tracking.js"></script>
   <title>Request Pool Service | Clear Pro Pools</title>
   <meta name="description" content="Request weekly pool service, green-to-clean service, or equipment repair from Clear Pro Pools. Prepare an email request for our local team.">
@@ -66,7 +66,7 @@
           <div class="field"><label for="message">Anything else we should know? <span class="optional">(optional)</span></label><textarea id="message" name="message" maxlength="3000" placeholder="Tell us what’s going on with your pool."></textarea></div>
           <p class="privacy" id="privacy">Your details will be included in the email you send to Clear Pro Pools. Please don’t include payment information.</p>
           <button class="submit" type="submit" style="margin-top:19px">Prepare email request<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button>
-          <p class="request-note">Prefer a quick message? <a href="sms:+12818245239">Text Clear Pro Pools</a>.</p>
+          <p class="request-note">Prefer a quick message? <a data-calltrk-noswap href="sms:+12818245239">Text Clear Pro Pools</a>.</p>
         </form>
         <noscript><p class="preview-note">To request service, email <a href="mailto:clearpropoolsllc@gmail.com">clearpropoolsllc@gmail.com</a> with your name, phone number, ZIP code, and the service you need.</p></noscript>
       </div>
@@ -77,7 +77,7 @@
         <p class="preview-note" role="status">Your request has not been sent. Choose “Open email app,” then press Send in your email app.</p>
         <dl class="summary"><div><dt>Service requested</dt><dd id="summary-service"></dd></div><div><dt>Preferred follow-up</dt><dd id="summary-contact"></dd></div><div><dt>Service area</dt><dd id="summary-zip"></dd></div></dl>
         <a class="submit" id="email-draft" href="mailto:clearpropoolsllc@gmail.com" style="text-decoration:none;margin-bottom:14px">Open email app <span aria-hidden="true">↗</span></a>
-        <p class="request-note" style="margin-bottom:18px">No email app set up? Email <a href="mailto:clearpropoolsllc@gmail.com" style="overflow-wrap:anywhere">clearpropoolsllc@gmail.com</a> or <a href="sms:+12818245239">text us instead</a>.</p>
+        <p class="request-note" style="margin-bottom:18px">No email app set up? Email <a href="mailto:clearpropoolsllc@gmail.com" style="overflow-wrap:anywhere">clearpropoolsllc@gmail.com</a> or <a data-calltrk-noswap href="sms:+12818245239">text us instead</a>.</p>
         <button class="back" id="back" type="button">← Edit request</button>
       </div>
     </section>

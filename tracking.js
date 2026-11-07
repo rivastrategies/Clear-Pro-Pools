@@ -37,6 +37,7 @@
     }
   };
   if (!enabled) return;
+  window.gtag = window.gtag || gtag;
   // GTM reads this only for explicit QA; absent for ordinary visitors.
   if (test) window.dataLayer.push({ cpp_debug_mode: true });
   window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
@@ -44,4 +45,20 @@
   tag.async = true;
   tag.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-W7DQD9PF';
   document.head.appendChild(tag);
+  // One company-specific CallRail installation; form capture stays disabled.
+  if (production) {
+    var loadCallRail = function () {
+      if (document.getElementById('cpp-callrail')) return;
+      var calls = document.createElement('script');
+      calls.id = 'cpp-callrail';
+      calls.async = true;
+      calls.src = 'https://cdn.callrail.com/companies/560093907/aa5fb0947b4a84f12243/12/swap.js';
+      document.body.appendChild(calls);
+    };
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', loadCallRail, { once: true });
+    } else {
+      loadCallRail();
+    }
+  }
 })();
