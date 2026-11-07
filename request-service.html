@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data: https://*.google-analytics.com https://www.googletagmanager.com https://*.callrail.com https://*.calltrk.com; style-src 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://cdn.callrail.com https://js.callrail.com; connect-src https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://www.google.com/g/collect https://www.googletagmanager.com https://*.callrail.com https://*.calltrk.com; form-action 'none'; base-uri 'none'">
-  <script src="/tracking.js?v=20261107-privacy"></script>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data: https://*.google-analytics.com https://www.googletagmanager.com https://*.callrail.com https://*.calltrk.com; style-src 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://cdn.callrail.com https://js.callrail.com; connect-src https://formspree.io https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://www.google.com/g/collect https://www.googletagmanager.com https://*.callrail.com https://*.calltrk.com; form-action https://formspree.io; base-uri 'none'">
+  <script src="/tracking.js?v=20261107-form"></script>
   <title>Request Pool Service | Clear Pro Pools</title>
-  <meta name="description" content="Request weekly pool service, green-to-clean service, or equipment repair from Clear Pro Pools. Prepare an email request for our local team.">
+  <meta name="description" content="Request weekly pool service, green-to-clean service, or equipment repair from Clear Pro Pools. Send a service request to our local team.">
   <link rel="canonical" href="https://clearpropools.com/request-service.html">
   <style>
     :root{--navy:#19386f;--deep:#11284f;--gold:#efb13f;--ink:#182b45;--muted:#5c6878;--line:#dce3eb;--wash:#f5f7fa}
@@ -38,16 +38,17 @@
       <figure class="photo"><img src="/images/658144539_122103582302914328_5135950807645714538_n.jpg" alt="A clear backyard pool and spa maintained by Clear Pro Pools"><figcaption>Local pool care. Clear answers.</figcaption></figure>
       <div class="next"><h2>What happens next?</h2><ol>
         <li><span class="step">1</span><span><strong>Tell us a little about your pool.</strong><br>Choose a service and leave your contact details.</span></li>
-        <li><span class="step">2</span><span><strong>Review and send your email.</strong><br>Send the prepared request from your email app. Clear Pro Pools will follow up about your needs and availability.</span></li>
+        <li><span class="step">2</span><span><strong>Send your request.</strong><br>Clear Pro Pools will follow up about your needs and availability.</span></li>
       </ol></div>
       <p class="areas"><strong>Serving our local communities</strong><br>Santa Fe · League City · Dickinson · Alvin · Friendswood</p>
     </section>
     <section class="form-card" aria-labelledby="form-title">
       <div id="form-view">
         <h2 id="form-title">Tell us about your pool.</h2>
-        <p class="form-intro">We’ll prepare an email for you to review and send to Clear Pro Pools.</p>
+        <p class="form-intro">Send your request directly to Clear Pro Pools. No email app needed.</p>
         <p class="required-note">All fields are required unless marked optional.</p>
-        <form id="service-request" aria-describedby="privacy" data-cr-no-capture>
+        <form id="service-request" action="https://formspree.io/f/xkjjzawn" method="POST" aria-describedby="privacy" data-cr-no-capture>
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
           <fieldset><legend>What can we help with?</legend><div class="services">
             <label class="service"><input type="radio" name="service" value="Weekly pool service" required><span>Weekly pool service</span></label>
             <label class="service"><input type="radio" name="service" value="Green-to-clean"><span>Green-to-clean</span></label>
@@ -64,11 +65,19 @@
             <label><input type="radio" name="contact_preference" value="Phone call" checked>Phone call</label><label><input type="radio" name="contact_preference" value="Text message">Text message</label>
           </div></fieldset>
           <div class="field"><label for="message">Anything else we should know? <span class="optional">(optional)</span></label><textarea id="message" name="message" maxlength="3000" placeholder="Tell us what’s going on with your pool."></textarea></div>
-          <p class="privacy" id="privacy">Your details will be included in the email you send to Clear Pro Pools so we can respond to your request. Please don’t include payment information. <a href="/privacy.html">Privacy notice</a>.</p>
-          <button class="submit" type="submit" style="margin-top:19px">Prepare email request<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button>
+          <p class="privacy" id="privacy">Your details are sent securely through Formspree to Clear Pro Pools so we can respond to your request. Please don’t include payment information. <a href="/privacy.html">Privacy notice</a>.</p>
+          <p id="form-status" class="preview-note" role="alert" tabindex="-1" hidden></p>
+          <button class="submit" id="send-request" type="submit" style="margin-top:19px">Send service request<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button>
+          <p class="request-note"><button class="back" id="prepare-email" type="button">Prepare an email instead</button></p>
           <p class="request-note">Prefer a quick message? <a data-calltrk-noswap href="sms:+12818245239">Text Clear Pro Pools</a>.</p>
         </form>
         <noscript><p class="preview-note">To request service, email <a href="mailto:clearpropoolsllc@gmail.com">clearpropoolsllc@gmail.com</a> with your name, phone number, ZIP code, and the service you need.</p></noscript>
+      </div>
+      <div class="confirmation" id="success" hidden>
+        <div class="success-icon" aria-hidden="true">✓</div>
+        <h2 id="success-heading" tabindex="-1">Your request has been received.</h2>
+        <p>Thank you. Clear Pro Pools will follow up about your pool’s needs and service availability.</p>
+        <a class="back" href="/">Back to home</a>
       </div>
       <div class="confirmation" id="confirmation" hidden>
         <div class="success-icon" aria-hidden="true">✉</div>
@@ -83,54 +92,6 @@
     </section>
   </div></main>
   <footer><div class="shell footer-inner"><p>Clear Pro Pools LLC · Santa Fe, Texas</p><p><a href="/privacy.html">Privacy notice</a> · <button class="cpp-privacy-settings" type="button" data-privacy-settings>Privacy settings</button></p><p>Built by <a href="https://rivastrategies.com/" target="_blank" rel="noopener noreferrer">Riva</a></p></div></footer>
-  <script>
-    // Direct-email service request. No contact details are sent by this page or stored.
-    // Interaction tracking never confirms an email was actually sent.
-    // A visitor must open their email app and explicitly send the prepared message.
-    const form = document.getElementById('service-request');
-    const phone = document.getElementById('phone');
-    const formView = document.getElementById('form-view');
-    const confirmation = document.getElementById('confirmation');
-    function validatePhone() {
-      const digits = phone.value.replace(/\D/g, '');
-      const valid = /^[+\d().\s-]+$/.test(phone.value) && (digits.length === 10 || (digits.length === 11 && digits.startsWith('1')));
-      phone.setCustomValidity(phone.value && !valid ? 'Enter a ten-digit US phone number, including the area code.' : '');
-    }
-    phone.addEventListener('input', validatePhone);
-    phone.addEventListener('change', validatePhone);
-    form.addEventListener('submit', event => {
-      event.preventDefault();
-      validatePhone();
-      if (!form.reportValidity()) return;
-      const values = new FormData(form);
-      const body = [
-        'Hello Clear Pro Pools,', '', 'I would like to request pool service.', '',
-        'Service: ' + values.get('service'),
-        'Name: ' + values.get('name'),
-        'Phone: ' + values.get('phone'),
-        'Email: ' + (values.get('email') || 'Not provided'),
-        'Pool ZIP code: ' + values.get('service_zip'),
-        'Preferred follow-up: ' + values.get('contact_preference'), '',
-        'Additional details:', values.get('message') || 'None provided'
-      ].join('\r\n');
-      document.getElementById('email-draft').href = 'mailto:clearpropoolsllc@gmail.com?subject=' +
-        encodeURIComponent('Pool service request — ' + values.get('service')) + '&body=' + encodeURIComponent(body);
-      document.getElementById('summary-service').textContent = values.get('service');
-      document.getElementById('summary-contact').textContent = values.get('contact_preference') + ' · ' + values.get('phone');
-      document.getElementById('summary-zip').textContent = 'ZIP ' + values.get('service_zip');
-      if (window.cppTracking) window.cppTracking.event('email_request_prepared');
-      formView.hidden = true;
-      confirmation.hidden = false;
-      document.getElementById('confirmation-heading').focus();
-    });
-    document.getElementById('email-draft').addEventListener('click', () => {
-      if (window.cppTracking) window.cppTracking.event('email_request_open');
-    });
-    document.getElementById('back').addEventListener('click', () => {
-      confirmation.hidden = true;
-      formView.hidden = false;
-      document.getElementById('full-name').focus();
-    });
-  </script>
+  <script src="/service-request.js?v=20261107-form"></script>
 </body>
 </html>

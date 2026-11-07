@@ -36,13 +36,13 @@
     internal: internal,
     event: function (name) {
       // Fixed event names and parameters: never send form values or mailto URLs.
-      if (!started || choice !== 'granted' || sent[name] || !/^(email_request_prepared|email_request_open)$/.test(name)) return;
+      if (!started || choice !== 'granted' || sent[name] || !/^(generate_lead|email_request_prepared|email_request_open)$/.test(name)) return;
       sent[name] = true;
       gtag('event', name, {
         send_to: 'G-MZHY57J14G',
         form_id: 'service-request',
-        lead_method: 'direct_email',
-        submission_confirmed: 'false',
+        lead_method: name === 'generate_lead' ? 'formspree' : 'direct_email',
+        submission_confirmed: name === 'generate_lead' ? 'true' : 'false',
         ...(test ? { debug_mode: true } : {})
       });
     }
