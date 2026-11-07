@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data: https://*.google-analytics.com https://www.googletagmanager.com; style-src 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; connect-src https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://www.google.com/g/collect https://www.googletagmanager.com; form-action 'none'; base-uri 'none'">
+  <script src="/tracking.js"></script>
   <title>Request Pool Service | Clear Pro Pools</title>
   <meta name="description" content="Request weekly pool service, green-to-clean service, or equipment repair from Clear Pro Pools. Prepare an email request for our local team.">
   <link rel="canonical" href="https://clearpropools.com/request-service.html">
@@ -83,7 +84,8 @@
   </div></main>
   <footer><div class="shell footer-inner"><p>Clear Pro Pools LLC · Santa Fe, Texas</p><p>Built by <a href="https://rivastrategies.com/" target="_blank" rel="noopener noreferrer">Riva</a></p></div></footer>
   <script>
-    // Direct-email service request. No network calls, analytics, storage, or form backend.
+    // Direct-email service request. No contact details are sent by this page or stored.
+    // Interaction tracking never confirms an email was actually sent.
     // A visitor must open their email app and explicitly send the prepared message.
     const form = document.getElementById('service-request');
     const phone = document.getElementById('phone');
@@ -116,9 +118,13 @@
       document.getElementById('summary-service').textContent = values.get('service');
       document.getElementById('summary-contact').textContent = values.get('contact_preference') + ' · ' + values.get('phone');
       document.getElementById('summary-zip').textContent = 'ZIP ' + values.get('service_zip');
+      if (window.cppTracking) window.cppTracking.event('email_request_prepared');
       formView.hidden = true;
       confirmation.hidden = false;
       document.getElementById('confirmation-heading').focus();
+    });
+    document.getElementById('email-draft').addEventListener('click', () => {
+      if (window.cppTracking) window.cppTracking.event('email_request_open');
     });
     document.getElementById('back').addEventListener('click', () => {
       confirmation.hidden = true;
